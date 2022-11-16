@@ -57,8 +57,10 @@ export default function PersonPage() {
           });
         }
       });
-      console.log(person.name)
-      const heroName = getHeroName(person.name);
+      console.log(person)
+      const heroName = person[
+        currentId >= 25 ? currentId - 2 : currentId - 1
+      ].name.replace("npc_dota_hero_", "");;
       console.log(heroName)
       const img = getHeroImage(heroName);
       setPersonPhoto(img);
