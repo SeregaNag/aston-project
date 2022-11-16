@@ -11,6 +11,8 @@ const Home = () => {
   const getResource = async (url) => {
     const res = await getApiResource(url);
 
+    console.log(res);
+
     const heroesList = res.map(({ name, localized_name, id }) => {
       const heroName = getHeroName(name);
       const img = getHeroImage(heroName);
