@@ -9,7 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import {
   setPersonToFavourite,
   removePersonFromFavourite,
-} from "../../store/actions";
+} from "../../store/slices/favouriteSlice";
 import iconFavourite from "./img/favourite.svg";
 import iconFavouriteFill from "./img/favourite-fill.svg";
 
@@ -22,7 +22,7 @@ export default function PersonPage() {
   const [isOpenLazy, setIsOpenLazy] = useState(false);
   const [personFavourite, setPersonFavourite] = useState(false);
 
-  const storeData = useSelector((state) => state.favouriteReducer);
+  const storeData = useSelector((state) => state.favouriteSlice);
   const params = useParams();
   const currentId = params.id;
   const dispatch = useDispatch();

@@ -1,19 +1,15 @@
-import { configureStore, getDefaultMiddleware } from "@reduxjs/toolkit";
-import rootReducer from './reducers'
-
-const middleware = getDefaultMiddleware({
-  immutableCheck: false,
-  serializableCheck: false,
-  thunk: true,
-});
+import { configureStore } from "@reduxjs/toolkit";
+// import rootReducer from "./reducers";
+import { setLocalStorage } from "../utils/localStorage";
+import favouriteSlice from "./slices/favouriteSlice";
 
 const store = configureStore({
-    reducer: rootReducer,
-    middleware
+  reducer: favouriteSlice,
 });
 
 store.subscribe(() => {
-    
-})
+  console.log(store.getState().favouriteSlice)
+  setLocalStorage("store", store.getState().favouriteSlice);
+});
 
 export default store;

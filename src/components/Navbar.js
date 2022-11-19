@@ -22,6 +22,9 @@ export default function Navbar() {
           <>
             <li>Hello, {user.displayName}</li>
             <li>
+              <Link to="/heroes">Heroes</Link>
+            </li>
+            <li>
               <Link to="/favourite">Favourite</Link>
             </li>
           </>

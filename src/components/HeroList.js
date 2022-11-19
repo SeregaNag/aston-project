@@ -7,7 +7,7 @@ export default function HeroList({ heroes }) {
     <ul className={styles.list__container}>
       {heroes.map(({ localized_name, id, img }) => (
         <li className={styles.list__item} key={id}>
-          <Link to={`/${id}`}>
+          <Link to={`/heroes/${id}`}>
             <img
               className={styles.hero__photo}
               src={img}

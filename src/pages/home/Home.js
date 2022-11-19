@@ -23,7 +23,6 @@ const Home = () => {
     });
 
     const realHeroesList = heroesList.slice(0, -10);
-    
 
     setHeroes(realHeroesList);
   };
@@ -32,7 +31,15 @@ const Home = () => {
     getResource(API_HEROES);
   }, []);
 
-  return <div className={styles.container}>{heroes && <HeroList heroes={heroes} />}</div>;
+  return (
+    <div className={styles.container}>
+      {heroes && (
+        <>
+          <HeroList heroes={heroes} />
+        </>
+      )}
+    </div>
+  );
 };
 
 export default Home;

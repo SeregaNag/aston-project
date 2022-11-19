@@ -3,10 +3,6 @@ import {
   REMOVE_PERSON_FROM_FAVOURITE,
 } from "../constants/actionTypes";
 
-// export const setPersonToFavourite = hero => ({
-//   type: ADD_PERSON_TO_FAVOURITE,
-//   payload: hero,
-// });
 
 export const setPersonToFavourite = (hero) => {
   return { type: ADD_PERSON_TO_FAVOURITE, payload: hero };

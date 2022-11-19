@@ -7,7 +7,7 @@ import HeroList from "../../components/HeroList";
 export default function Favourite() {
   const [heroes, setHeroes] = useState([]);
 
-  const storeData = useSelector((state) => state.favouriteReducer);
+  const storeData = useSelector((state) => state.favouriteSlice);
 
   useEffect(() => {
     const arr = Object.entries(storeData);
