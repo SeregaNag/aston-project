@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useLogout } from "../hooks/useLogout";
 import { useAuthContext } from "../hooks/useAuthContext";
+import logo from "./img/dota.png";
 
 import styles from "./Navbar.module.css";
 
@@ -12,14 +13,16 @@ export default function Navbar() {
     <nav className={styles.navbar}>
       <ul>
         <li className={styles.title}>
-          <Link to="/">Title</Link>
+          <Link to="/">
+            <img className={styles.logo} src={logo} alt="logo" />
+          </Link>
         </li>
 
         {user && (
           <>
-          <li>Hello, {user.displayName}</li>
+            <li>Hello, {user.displayName}</li>
             <li>
-              <Link to="favourites">Favourite</Link>
+              <Link to="/favourite">Favourite</Link>
             </li>
           </>
         )}
