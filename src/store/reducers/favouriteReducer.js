@@ -1,10 +1,10 @@
-import { getLocalStorage } from "../../utils/localStorage";
 import {
   ADD_PERSON_TO_FAVOURITE,
   REMOVE_PERSON_FROM_FAVOURITE,
 } from "../constants/actionTypes";
+import { getLocalStorage } from "../../utils/localStorage";
 
-const initialState = getLocalStorage("store");
+const initialState = getLocalStorage('store');
 
 const favouriteReducer = (state = initialState, action) => {
   switch (action.type) {
@@ -14,9 +14,9 @@ const favouriteReducer = (state = initialState, action) => {
         ...action.payload,
       };
     case REMOVE_PERSON_FROM_FAVOURITE:
-      const { [action.payload]: obj, ...rest } = state;
+      const {[action.payload]: obj, ...rest} = state
       return {
-        ...rest,
+        ...rest
       };
     default:
       return state;
