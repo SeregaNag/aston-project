@@ -6,6 +6,7 @@
   list-style-type: none;
   max-width: 960px;
   align-items: center;
+ 
 }
 
 .list__item {
@@ -14,11 +15,28 @@
   cursor: pointer;
   background-color: #1f9751;
   border-radius: 10px;
+   transition: 1s;
+}
+
+.list__item:nth-child(9n+1), .list__item:nth-child(9n+2), .list__item:nth-child(9n+3) {
+  background-color: #614678;
+}
+
+.list__item:nth-child(9n+4), .list__item:nth-child(9n+5), .list__item:nth-child(9n+6) {
+  background-color: #74558D;
+}
+
+.list__item:nth-child(9n+7), .list__item:nth-child(9n+8), .list__item:nth-child(9n+9) {
+  background-color: #8A6BA3;
+}
+
+.list__item:hover {
+  transform: scale(1.2)
 }
 
 .list__item a {
   text-decoration: none;
-  color: black;
+  color: white;
   text-align: center;
 }
 

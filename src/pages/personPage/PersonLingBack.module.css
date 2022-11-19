@@ -1,0 +1,16 @@
+.link {
+display: inline-flex;
+align-items: center;
+margin-top: 15px;
+font-weight: 600;
+text-decoration: none;
+width: 30%;
+color:black
+}
+
+.link__img {
+width: 30px;
+height: 30px;
+margin: auto;
+margin-right: 0;
+}

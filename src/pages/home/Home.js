@@ -11,26 +11,28 @@ const Home = () => {
   const getResource = async (url) => {
     const res = await getApiResource(url);
 
-    console.log(res);
-
     const heroesList = res.map(({ name, localized_name, id }) => {
       const heroName = getHeroName(name);
       const img = getHeroImage(heroName);
       return {
+        name,
         localized_name,
         id,
         img,
       };
     });
 
-    setHeroes(heroesList);
+    const realHeroesList = heroesList.slice(0, -10);
+    
+
+    setHeroes(realHeroesList);
   };
 
   useEffect(() => {
     getResource(API_HEROES);
   }, []);
 
-  return <div>{heroes && <HeroList heroes={heroes} />}</div>;
+  return <div className={styles.container}>{heroes && <HeroList heroes={heroes} />}</div>;
 };
 
 export default Home;

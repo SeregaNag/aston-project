@@ -19,6 +19,7 @@ function App() {
           <Navbar />
           <Routes>
             <Route
+              exact
               path="/"
               element={
                 user ? (
@@ -39,12 +40,12 @@ function App() {
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
             <Route
-              path="/favourites"
+              path="/favourite"
               element={user ? <Favourite /> : <Navigate to="/login" />}
             />
             <Route path="*" element={<NotFound />} />
             <Route
-              path=":id"
+              path="/:id"
               element={
                 user ? (
                   <ErrorBoundary>
