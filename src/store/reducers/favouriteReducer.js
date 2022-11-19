@@ -2,8 +2,9 @@ import {
   ADD_PERSON_TO_FAVOURITE,
   REMOVE_PERSON_FROM_FAVOURITE,
 } from "../constants/actionTypes";
+import { getLocalStorage } from "../../utils/localStorage";
 
-const initialState = [];
+const initialState = getLocalStorage('store');
 
 const favouriteReducer = (state = initialState, action) => {
   switch (action.type) {

@@ -9,6 +9,8 @@ import Favourite from "./pages/favourite/Favourite";
 import { ErrorBoundary } from "./components/ErrorBoundary";
 import NotFound from "./pages/notFound/NotFound";
 import PersonPage from "./pages/personPage/PersonPage";
+import Main from "./pages/main/Main";
+import Search from "./pages/search/Search";
 
 function App() {
   const { authIsReady, user } = useAuthContext();
@@ -21,6 +23,20 @@ function App() {
             <Route
               exact
               path="/"
+              element={
+                user ? (
+                  <ErrorBoundary>
+                    <Main />
+                  </ErrorBoundary>
+                ) : (
+                  <Navigate to="/login" />
+                )
+              }
+            />
+
+            <Route
+              exact
+              path="/heroes"
               element={
                 user ? (
                   <ErrorBoundary>
@@ -43,9 +59,14 @@ function App() {
               path="/favourite"
               element={user ? <Favourite /> : <Navigate to="/login" />}
             />
-            <Route path="*" element={<NotFound />} />
+
             <Route
-              path="/:id"
+              path="/search"
+              element={user ? <Search /> : <Navigate to="/login" />}
+            />
+
+            <Route
+              path="/heroes/:id"
               element={
                 user ? (
                   <ErrorBoundary>
@@ -56,6 +77,7 @@ function App() {
                 )
               }
             />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </BrowserRouter>
       )}
