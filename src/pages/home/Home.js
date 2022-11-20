@@ -1,4 +1,3 @@
-import styles from "./Home.module.css";
 import { getApiResource } from "../../data/dataFetch";
 import { useState, useEffect } from "react";
 import { API_HEROES } from "../../constants/api";
@@ -32,7 +31,7 @@ const Home = () => {
   }, []);
 
   return (
-    <div className={styles.container}>
+    <div>
       {heroes && (
         <>
           <HeroList heroes={heroes} />
